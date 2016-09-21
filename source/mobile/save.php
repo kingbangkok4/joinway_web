@@ -19,8 +19,9 @@
         //$type = 'gfgfg';
         
 	$strSQL = " INSERT INTO `map`(`user_id`, `meeting_point`, `license_plate`, `map_datetime`, `start`, `end`, `type`)";
-        $strSQL .= " VALUES ('$user_id', '{$meeting_point}', '{$license_plate}', '{$map_datetime}', '{$start}', '{$end}', '{$type}'); ";
-        mysql_query($strSQL);
+    $strSQL .= " VALUES ('$user_id', '{$meeting_point}', '{$license_plate}', '{$map_datetime}', 'ทดสอบ', '{$end}', '{$type}'); ";
+	mysql_query("SET NAMES 'utf8'");
+    mysql_query($strSQL);
 	
         
         //echo $strSQL;
