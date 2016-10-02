@@ -1,7 +1,9 @@
 <?php
+
 	include("connectDB.php");
-        
-		$strSQL = " SELECT * FROM map AS m LEFT OUTER JOIN user u ON m.user_id = u.user_id WHERE DATE_FORMAT(m.map_datetime,'%Y-%m-%d') >= '".date('Y-m-d')."' ORDER BY DATE_FORMAT( m.map_datetime, '%Y-%m-%d' ) ";
+        $type = $_REQUEST["type"];
+		
+		$strSQL = " SELECT * FROM map AS m LEFT OUTER JOIN user u ON m.user_id = u.user_id WHERE DATE_FORMAT(m.map_datetime,'%Y-%m-%d') >= '".date('Y-m-d')."' AND type = '{$type}' ORDER BY DATE_FORMAT( m.map_datetime, '%Y-%m-%d' ) ";
 		//echo $strSQL."<br />";
 		$objQuery = mysql_query($strSQL);
 		$intNumField = mysql_num_fields($objQuery);
