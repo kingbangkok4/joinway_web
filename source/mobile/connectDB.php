@@ -1,4 +1,4 @@
 <?php
-    $objConnect = mysql_connect("localhost","root","1234");
+    $objConnect = mysql_connect("localhost","root","");
     $objDB = mysql_select_db("joinway");
 ?>
