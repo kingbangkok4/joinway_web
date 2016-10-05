@@ -22,6 +22,13 @@
     $strSQL .= " VALUES ('$user_id', '{$meeting_point}', '{$license_plate}', '{$map_datetime}', 'ทดสอบ', '{$end}', '{$type}'); ";
 	mysql_query("SET NAMES 'utf8'");
     mysql_query($strSQL);
+	$id = mysql_insert_id();
+	$strSQL = " INSERT INTO `match`(`map_id`, `driver`)";
+    $strSQL .= " VALUES ({$id}, '{$user_id}'); ";
+	mysql_query("SET NAMES 'utf8'");
+    mysql_query($strSQL);
+
+	
 	
         
         //echo $strSQL;
