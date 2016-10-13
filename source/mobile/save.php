@@ -19,7 +19,7 @@
         //$type = 'gfgfg';
         
 	$strSQL = " INSERT INTO `map`(`user_id`, `meeting_point`, `license_plate`, `map_datetime`, `start`, `end`, `type`)";
-    $strSQL .= " VALUES ('$user_id', '{$meeting_point}', '{$license_plate}', '{$map_datetime}', 'ทดสอบ', '{$end}', '{$type}'); ";
+    $strSQL .= " VALUES ('$user_id', '{$meeting_point}', '{$license_plate}', '{$map_datetime}', '{$start}', '{$end}', '{$type}'); ";
 	mysql_query("SET NAMES 'utf8'");
     mysql_query($strSQL);
 	$id = mysql_insert_id();
