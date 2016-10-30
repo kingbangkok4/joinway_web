@@ -21,3 +21,5 @@ while($obResult = mysql_fetch_array($objQuery))
 mysql_close($objConnect);
 echo json_encode($resultArray);
 ?>
+
+
