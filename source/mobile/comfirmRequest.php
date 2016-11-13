@@ -14,5 +14,5 @@ if ($result) {
 }
 
 mysql_close ( $objConnect );
-echo json_encode ( $arr );
+echo json_encode ($arr);
 ?>

@@ -3,7 +3,7 @@
 	include("connectDB.php");
         $type = $_REQUEST["type"];
 		//echo(date('Y-m-d H:i'));
-		$strSQL = " SELECT * FROM map AS m LEFT OUTER JOIN user u ON m.user_id = u.user_id WHERE DATE_FORMAT(m.map_datetime,'%Y-%m-%d %H:%i') <= '".date('Y-m-d H:i')."' AND type = '{$type}' ORDER BY DATE_FORMAT( m.map_datetime, '%Y-%m-%d %H:%i' ) ";
+		$strSQL = " SELECT * FROM map AS m LEFT OUTER JOIN user u ON m.user_id = u.user_id WHERE DATE_FORMAT(m.map_datetime,'%Y-%m-%d %H:%i') <> '".date('Y-m-d H:i')."' AND type = '{$type}' ORDER BY DATE_FORMAT( m.map_datetime, '%Y-%m-%d %H:%i' ) ";
 		//echo $strSQL."<br />";
 		mysql_query("SET NAMES 'utf8'");
 		$objQuery = mysql_query($strSQL);

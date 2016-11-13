@@ -27,6 +27,21 @@
     $strSQL .= " VALUES ({$id}, '{$user_id}'); ";
 	mysql_query("SET NAMES 'utf8'");
     mysql_query($strSQL);
+    
+    $strSQL = " INSERT INTO `word`(`word_text`)";
+    $strSQL .= " VALUES ({'{$start}'); ";
+    mysql_query("SET NAMES 'utf8'");
+    mysql_query($strSQL);
+    
+    $strSQL = " INSERT INTO `word`(`word_text`)";
+    $strSQL .= " VALUES ({'{$end}'); ";
+    mysql_query("SET NAMES 'utf8'");
+    mysql_query($strSQL);
+    
+    $strSQL = " INSERT INTO `word`(`word_text`)";
+    $strSQL .= " VALUES ({'{$meeting_point}'); ";
+    mysql_query("SET NAMES 'utf8'");
+    mysql_query($strSQL);
 
 	
 	
