@@ -3,6 +3,8 @@
 	include("connectDB.php");
         $map_id = $_REQUEST["map_id"];
 		$passenger = $_REQUEST["passenger"];
+		$request_id = $_REQUEST["request_id"];
+		$action = $_REQUEST["action"];
 		
 		$strSQL = " SELECT * FROM `match` WHERE map_id = {$map_id} AND (passenger1 IS NULL OR passenger2 IS NULL OR passenger3 IS NULL) ";
 		//echo $strSQL."<br />";
@@ -24,14 +26,18 @@
 				}
 				$strSQL .= " WHERE map_id = {$map_id}; ";
 				mysql_query("SET NAMES 'utf8'");
-				mysql_query($strSQL);				
+				mysql_query($strSQL);	
+				
+				$strSQL = " UPDATE `request` SET `action` = '{$action}' WHERE `request_id` = '{$request_id}' ";
+				mysql_query($strSQL);
+				
 				$arr['status'] = "บันทึกสำเร็จ";	
 			}else{
 				$arr['status'] = "คุณเคยส่งคำขอแล้ว!";	
 			}								
 		}else{
 			$arr['status'] = "รถคันนี้ผู้โดยสารเต็มแล้ว!"; 			
-		}
+		}			
 		
 		mysql_close($objConnect);
 		echo json_encode($arr);
