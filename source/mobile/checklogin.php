@@ -17,12 +17,16 @@
 	{
 		$arr['StatusID'] = "0"; 
 		$arr['user_id'] = "0"; 
+		$arr['name'] = "";
+		$arr['image'] = "";
 		$arr['Error'] = "Incorrect Username and Password";	
 	}
 	else
 	{
 		$arr['StatusID'] = "1"; 
 		$arr['user_id'] = $objResult["user_id"]; 
+		$arr['name'] = $objResult["firstname"]." ".$objResult["lastname"];
+		$arr['image'] = $objResult["image"];
 		$arr['Error'] = "";	
 	}
 
